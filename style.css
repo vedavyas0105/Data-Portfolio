@@ -178,3 +178,47 @@ body::-webkit-scrollbar,
   width: 0%;
   transition: width 0.1s ease;
 }
+
+/* Skill Cards and Tooltips */
+.skill-card {
+  position: relative;
+  transition: all 0.2s ease;
+}
+
+.skill-card:hover {
+  transform: translateY(-1px);
+}
+
+.skill-tooltip {
+  pointer-events: none;
+  z-index: 50;
+}
+
+.skill-tooltip .bg-white {
+  box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1),
+    0 4px 6px -2px rgba(0, 0, 0, 0.05);
+  border: 1px solid #e5e7eb;
+}
+
+/* Ensure tooltips are visible on hover */
+.skill-card:hover .skill-tooltip {
+  pointer-events: auto;
+}
+
+/* Responsive adjustments for skill cards */
+@media (max-width: 768px) {
+  .skill-tooltip {
+    position: fixed !important;
+    bottom: auto !important;
+    left: 50% !important;
+    transform: translateX(-50%) !important;
+    top: 50% !important;
+    margin: 0 !important;
+    width: 90vw !important;
+    max-width: 280px !important;
+  }
+
+  .skill-tooltip .bg-white {
+    max-width: none !important;
+  }
+}

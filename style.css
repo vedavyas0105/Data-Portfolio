@@ -88,6 +88,17 @@ html {
   opacity: 1;
 }
 
+/* Case Study Card Hover Effects - Same as Projects */
+.case-study-card {
+  cursor: pointer;
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.case-study-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
+}
+
 /* Hidden Projects */
 .project-hidden {
   display: none;

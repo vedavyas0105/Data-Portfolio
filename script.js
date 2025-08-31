@@ -106,6 +106,260 @@ document.addEventListener("DOMContentLoaded", function () {
   filterProjects();
 });
 
+// Skills Data for Modal
+const skillsData = {
+  python: {
+    title: "Python",
+    proficiency: "Expert",
+    expertise: ["Data Analysis", "Machine Learning", "Web Development"],
+    technologies: ["Pandas", "NumPy", "Scikit-learn", "Flask"],
+    projects: ["Customer Segmentation", "Churn Prediction", "Data Pipeline"],
+    description: "Core programming language for data science and analytics",
+  },
+  sql: {
+    title: "SQL",
+    proficiency: "Advanced",
+    expertise: ["Database Design", "Data Querying", "Performance Optimization"],
+    technologies: ["MySQL", "PostgreSQL", "SQL Server", "BigQuery"],
+    projects: [
+      "Healthcare Data Pipeline",
+      "E-commerce Analytics",
+      "Customer Database",
+    ],
+    description:
+      "Structured query language for database management and data extraction",
+  },
+  tableau: {
+    title: "Tableau",
+    proficiency: "Proficient",
+    expertise: [
+      "Data Visualization",
+      "Dashboard Creation",
+      "Business Intelligence",
+    ],
+    technologies: [
+      "Tableau Desktop",
+      "Tableau Server",
+      "Tableau Prep",
+      "Calculated Fields",
+    ],
+    projects: [
+      "Sales Performance Dashboard",
+      "Customer Analytics",
+      "Executive Reports",
+    ],
+    description:
+      "Powerful data visualization tool for creating interactive dashboards and reports",
+  },
+  excel: {
+    title: "Excel",
+    proficiency: "Skilled",
+    expertise: ["Data Analysis", "Financial Modeling", "Reporting"],
+    technologies: ["Pivot Tables", "VBA", "Power Query", "Advanced Formulas"],
+    projects: ["Financial Analysis", "Sales Reports", "Data Cleaning"],
+    description:
+      "Versatile spreadsheet tool for data analysis and business reporting",
+  },
+  powerbi: {
+    title: "Power BI",
+    proficiency: "Proficient",
+    expertise: ["Data Modeling", "DAX", "Report Development"],
+    technologies: [
+      "Power Query",
+      "DAX Formulas",
+      "Power BI Service",
+      "Data Gateway",
+    ],
+    projects: [
+      "Price Optimization Dashboard",
+      "Business Intelligence",
+      "KPI Tracking",
+    ],
+    description:
+      "Microsoft's business analytics service for data visualization and insights",
+  },
+  r: {
+    title: "R",
+    proficiency: "Intermediate",
+    expertise: ["Statistical Analysis", "Data Visualization", "Research"],
+    technologies: ["ggplot2", "dplyr", "shiny", "R Markdown"],
+    projects: [
+      "Statistical Modeling",
+      "Research Analysis",
+      "Academic Projects",
+    ],
+    description:
+      "Statistical computing language for data analysis and research",
+  },
+  scikit: {
+    title: "Scikit-learn",
+    proficiency: "Advanced",
+    expertise: [
+      "Supervised Learning",
+      "Unsupervised Learning",
+      "Model Evaluation",
+    ],
+    technologies: [
+      "Classification",
+      "Regression",
+      "Clustering",
+      "Cross-validation",
+    ],
+    projects: [
+      "Customer Segmentation",
+      "Patient Outcome Prediction",
+      "Sales Forecasting",
+    ],
+    description:
+      "Comprehensive machine learning library for Python with robust algorithms and tools",
+  },
+  tensorflow: {
+    title: "TensorFlow",
+    proficiency: "Intermediate",
+    expertise: ["Deep Learning", "Neural Networks", "Model Deployment"],
+    technologies: ["Keras", "TensorFlow Lite", "TensorBoard", "SavedModel"],
+    projects: [
+      "Image Classification",
+      "Natural Language Processing",
+      "Neural Network Models",
+    ],
+    description:
+      "Open-source deep learning framework for building and training neural networks",
+  },
+  pytorch: {
+    title: "PyTorch",
+    proficiency: "Intermediate",
+    expertise: ["Deep Learning", "Research", "Dynamic Computation"],
+    technologies: ["Autograd", "TorchScript", "Distributed Training", "ONNX"],
+    projects: [
+      "Computer Vision Models",
+      "NLP Research",
+      "Custom Neural Networks",
+    ],
+    description:
+      "Flexible deep learning framework with dynamic computational graphs and research focus",
+  },
+  nlp: {
+    title: "NLP",
+    proficiency: "Intermediate",
+    expertise: ["Text Processing", "Language Models", "Sentiment Analysis"],
+    technologies: ["Transformers", "BERT", "GPT", "SpaCy"],
+    projects: [
+      "Text Classification",
+      "Sentiment Analysis",
+      "Language Understanding",
+    ],
+    description:
+      "Natural Language Processing techniques for understanding and processing human language",
+  },
+  computervision: {
+    title: "Computer Vision",
+    proficiency: "Intermediate",
+    expertise: ["Image Processing", "Object Detection", "Image Classification"],
+    technologies: ["OpenCV", "CNN", "YOLO", "Image Segmentation"],
+    projects: [
+      "Medical Image Analysis",
+      "Object Detection",
+      "Image Recognition",
+    ],
+    description:
+      "Computer vision techniques for analyzing and understanding digital images",
+  },
+  predictivemodeling: {
+    title: "Predictive Modeling",
+    proficiency: "Proficient",
+    expertise: ["Time Series", "Forecasting", "Statistical Modeling"],
+    technologies: ["ARIMA", "Prophet", "LSTM", "XGBoost"],
+    projects: ["Sales Forecasting", "Demand Prediction", "Risk Assessment"],
+    description:
+      "Advanced modeling techniques for predicting future outcomes and trends",
+  },
+  git: {
+    title: "Git",
+    proficiency: "Proficient",
+    expertise: ["Version Control", "Collaboration", "Code Management"],
+    technologies: ["GitHub", "GitLab", "Bitbucket", "Git Flow"],
+    projects: [
+      "Portfolio Development",
+      "Team Collaboration",
+      "Code Versioning",
+    ],
+    description:
+      "Distributed version control system for tracking changes and collaborating on code",
+  },
+  docker: {
+    title: "Docker",
+    proficiency: "Intermediate",
+    expertise: ["Containerization", "Deployment", "Environment Management"],
+    technologies: [
+      "Docker Compose",
+      "Docker Hub",
+      "Multi-stage Builds",
+      "Volumes",
+    ],
+    projects: [
+      "ML Model Deployment",
+      "Web Application Containers",
+      "Development Environments",
+    ],
+    description:
+      "Containerization platform for packaging and deploying applications consistently",
+  },
+  flask: {
+    title: "Flask",
+    proficiency: "Intermediate",
+    expertise: ["Web Development", "API Development", "Backend Services"],
+    technologies: ["Python", "REST APIs", "Jinja2", "SQLAlchemy"],
+    projects: [
+      "Churn Prediction API",
+      "Data Dashboard Backend",
+      "ML Model Services",
+    ],
+    description:
+      "Lightweight web framework for building Python web applications and APIs",
+  },
+  aws: {
+    title: "AWS",
+    proficiency: "Basic",
+    expertise: ["Cloud Computing", "Infrastructure", "Services"],
+    technologies: ["EC2", "S3", "Lambda", "RDS"],
+    projects: ["Cloud Deployment", "Data Storage", "Serverless Functions"],
+    description:
+      "Amazon Web Services cloud computing platform for scalable infrastructure",
+  },
+  jupyter: {
+    title: "Jupyter",
+    proficiency: "Proficient",
+    expertise: [
+      "Data Analysis",
+      "Notebook Development",
+      "Interactive Computing",
+    ],
+    technologies: ["Jupyter Notebook", "JupyterLab", "IPython", "Widgets"],
+    projects: [
+      "Data Exploration",
+      "ML Model Development",
+      "Interactive Reports",
+    ],
+    description:
+      "Interactive computing environment for data science and machine learning",
+  },
+  streamlit: {
+    title: "Streamlit",
+    proficiency: "Intermediate",
+    expertise: ["Web Applications", "Data Apps", "Rapid Prototyping"],
+    technologies: [
+      "Python",
+      "Interactive Widgets",
+      "Data Visualization",
+      "Deployment",
+    ],
+    projects: ["ML Model Interfaces", "Data Dashboards", "Interactive Tools"],
+    description:
+      "Python library for creating interactive web applications for data science",
+  },
+};
+
 // Project Modal System
 const projectData = {
   "project-1": {
@@ -210,7 +464,18 @@ const caseStudyData = {
   },
 };
 
-// Modal functionality
+// Skills Modal functionality
+const skillsModal = document.getElementById("skills-modal");
+const skillsModalTitle = document.getElementById("skills-modal-title");
+const skillsProficiency = document.getElementById("skills-proficiency");
+const skillsExpertise = document.getElementById("skills-expertise");
+const skillsTechnologies = document.getElementById("skills-technologies");
+const skillsProjects = document.getElementById("skills-projects");
+const skillsDescription = document.getElementById("skills-description");
+const closeSkillsModal = document.getElementById("close-skills-modal");
+const skillsModalCloseBtn = document.getElementById("skills-modal-close-btn");
+
+// Project Modal functionality
 const modal = document.getElementById("project-modal");
 const modalTitle = document.getElementById("modal-title");
 const modalDomain = document.getElementById("modal-domain");
@@ -221,6 +486,63 @@ const modalSectionTitle = document.getElementById("modal-section-title");
 const modalStatus = document.getElementById("modal-status");
 const closeModal = document.getElementById("close-modal");
 const modalCloseBtn = document.getElementById("modal-close-btn");
+
+function openSkillsModal(skillId) {
+  const data = skillsData[skillId];
+
+  if (data) {
+    skillsModalTitle.textContent = data.title;
+    skillsProficiency.textContent = data.proficiency;
+
+    // Clear and populate expertise areas
+    skillsExpertise.innerHTML = "";
+    data.expertise.forEach((area) => {
+      const tag = document.createElement("span");
+      tag.className =
+        "px-2 py-1 bg-blue-100 text-blue-700 text-xs rounded-full";
+      tag.textContent = area;
+      skillsExpertise.appendChild(tag);
+    });
+
+    // Clear and populate technologies
+    skillsTechnologies.innerHTML = "";
+    data.technologies.forEach((tech) => {
+      const tag = document.createElement("span");
+      tag.className =
+        "px-2 py-1 bg-green-100 text-green-700 text-xs rounded-full";
+      tag.textContent = tech;
+      skillsTechnologies.appendChild(tag);
+    });
+
+    // Clear and populate projects
+    skillsProjects.innerHTML = "";
+    data.projects.forEach((project) => {
+      const tag = document.createElement("span");
+      tag.className =
+        "px-2 py-1 bg-purple-100 text-purple-700 text-xs rounded-full";
+      tag.textContent = project;
+      skillsProjects.appendChild(tag);
+    });
+
+    skillsDescription.textContent = data.description;
+
+    // Show modal with smooth animation
+    skillsModal.classList.remove("hidden");
+    // Small delay to ensure the modal is visible before adding show class
+    requestAnimationFrame(() => {
+      skillsModal.classList.add("show");
+    });
+  }
+}
+
+function closeSkillsModalFunc() {
+  // Remove show class to trigger exit animation
+  skillsModal.classList.remove("show");
+  // Wait for animation to complete before hiding
+  setTimeout(() => {
+    skillsModal.classList.add("hidden");
+  }, 300);
+}
 
 function openModal(projectId) {
   let data = null;
@@ -297,7 +619,18 @@ function closeModalFunc() {
   }, 300);
 }
 
-// Event listeners
+// Skills Modal Event listeners
+closeSkillsModal.addEventListener("click", closeSkillsModalFunc);
+skillsModalCloseBtn.addEventListener("click", closeSkillsModalFunc);
+
+// Close skills modal when clicking outside
+skillsModal.addEventListener("click", (e) => {
+  if (e.target === skillsModal) {
+    closeSkillsModalFunc();
+  }
+});
+
+// Project Modal Event listeners
 closeModal.addEventListener("click", closeModalFunc);
 modalCloseBtn.addEventListener("click", closeModalFunc);
 

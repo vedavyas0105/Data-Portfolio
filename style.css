@@ -132,13 +132,15 @@ html {
   transition: opacity 0.3s ease-in-out;
 }
 
-#project-modal .bg-white {
+#project-modal .bg-white,
+#skills-modal .bg-white {
   transition: all 0.3s ease-in-out;
   transform: scale(0.9);
   opacity: 0;
 }
 
-#project-modal.show .bg-white {
+#project-modal.show .bg-white,
+#skills-modal.show .bg-white {
   transform: scale(1);
   opacity: 1;
 }
@@ -157,8 +159,27 @@ body::-webkit-scrollbar,
   width: 0;
 }
 
+/* Skills Modal specific scrollbar hiding */
+#skills-modal .bg-white {
+  scrollbar-width: none;
+  -ms-overflow-style: none;
+}
+
+#skills-modal .bg-white::-webkit-scrollbar {
+  display: none;
+  width: 0;
+}
+
+/* Consistent backdrop blur for all modals */
+#project-modal,
+#skills-modal {
+  backdrop-filter: blur(8px);
+  -webkit-backdrop-filter: blur(8px);
+}
+
 /* Hide scrollbars in modal and all elements */
 #project-modal .bg-white,
+#skills-modal .bg-white,
 .overflow-y-auto,
 [class*="overflow"] {
   scrollbar-width: none;
@@ -166,6 +187,7 @@ body::-webkit-scrollbar,
 }
 
 #project-modal .bg-white::-webkit-scrollbar,
+#skills-modal .bg-white::-webkit-scrollbar,
 .overflow-y-auto::-webkit-scrollbar,
 [class*="overflow"]::-webkit-scrollbar {
   display: none;

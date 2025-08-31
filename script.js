@@ -49,7 +49,7 @@ document.addEventListener("DOMContentLoaded", function () {
   const loadMoreBtn = document.getElementById("load-more-btn");
 
   let currentFilter = "all";
-  let visibleProjects = 6;
+  let visibleProjects = 3;
   const totalProjects = projectCards.length;
 
   // Filter functionality

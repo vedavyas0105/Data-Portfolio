@@ -14,10 +14,7 @@ function scrollToTop() {
 
 // Open resume function
 function openResume() {
-  // You can replace this URL with your actual resume link
-  window.open("https://example.com/resume.pdf", "_blank");
-  // Alternative: If you have a resume file in your project, use:
-  // window.open('./resume.pdf', '_blank');
+  window.open("./assets/21ME02035_Resume.pdf", "_blank");
 }
 
 // Contact form handling
